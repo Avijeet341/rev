@@ -7,16 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const subject = card.getAttribute('data-subject');
             console.log(`Viewing details for ${subject}`);
-            // Add your view details functionality here
-        });
 
-        // Add hover animations
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px) rotateX(5deg)';
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0) rotateX(0)';
+            // Redirect to section-content.html with the subject as a URL parameter
+            window.location.href = `section-content.html?subject=${subject}`;
         });
     });
 });

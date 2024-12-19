@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f7fc;
+}
+
+.subject-details {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.subject-header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.subject-description {
+    font-size: 1.1rem;
+    color: #555;
+}
