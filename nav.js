@@ -1,3 +1,5 @@
+// nav.js
+
 // DOM Ready Event
 document.addEventListener('DOMContentLoaded', () => {
     // Load the initial content based on the hash
@@ -16,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Highlight the active menu item on page load
     highlightActiveMenuItem(initialSection.label);
+
+    // Add event listeners for navigation links
+    setupNavigationLinks();
+
+    // Event delegation for View Details button click
+    document.getElementById('mainContent').addEventListener('click', handleViewDetailsClick);
 });
 
 // Get the section based on the current hash
@@ -50,8 +58,6 @@ async function loadContent(page, label, updateHash = true) {
         setTimeout(() => {
             mainContent.innerHTML = content;
             mainContent.style.opacity = 1; // Fade in animation
-            // Reinitialize event listeners after new content is loaded
-            initializeEventListeners();
         }, 300);
 
         // Update the URL hash if required
@@ -77,6 +83,43 @@ function highlightActiveMenuItem(label) {
             item.classList.add('active');
         }
     });
+}
+
+// Setup navigation link click event listeners
+function setupNavigationLinks() {
+    const dashboardLink = document.getElementById('dashboard-link');
+    const studentsLink = document.getElementById('students-link');
+    const attendanceLink = document.getElementById('attendance-link');
+    const settingsLink = document.getElementById('settings-link');
+
+    dashboardLink.addEventListener('click', () => {
+        loadContent('dashboard-content.html', 'Dashboard');
+    });
+
+    studentsLink.addEventListener('click', () => {
+        loadContent('students-content.html', 'Students');
+    });
+
+    attendanceLink.addEventListener('click', () => {
+        loadContent('attendance-content.html', 'Attendance');
+    });
+
+    settingsLink.addEventListener('click', () => {
+        loadContent('settings-content.html', 'Settings');
+    });
+}
+
+// Handle View Details button click (delegated)
+function handleViewDetailsClick(event) {
+    // Check if the clicked element is a View Details button
+    if (event.target.classList.contains('view-details-btn')) {
+        const subjectCard = event.target.closest('.subject-card'); // Find the closest subject card
+        const subject = subjectCard.getAttribute('data-subject');
+        console.log(`Viewing details for ${subject}`);
+
+        // Redirect to section-content.html with the subject as a URL parameter
+        window.location.href = `section-content.html?subject=${subject}`;
+    }
 }
 
 // Toggle Theme (Light/Dark Mode)
@@ -105,20 +148,3 @@ function loadSavedTheme() {
 
 // Call function to load theme preference on page load
 loadSavedTheme();
-
-// Initialize event listeners for dynamically loaded content
-function initializeEventListeners() {
-    const cards = document.querySelectorAll('.subject-card');
-
-    cards.forEach(card => {
-        const viewDetailsBtn = card.querySelector('.view-details-btn');
-        viewDetailsBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const subject = card.getAttribute('data-subject');
-            console.log(`Viewing details for ${subject}`);
-
-            // Redirect to section-content.html with the subject as a URL parameter
-            window.location.href = `section-content.html?subject=${subject}`;
-        });
-    });
-}
