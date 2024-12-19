@@ -1,64 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Attendance Management Site</title>
     <link rel="stylesheet" href="nav.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <aside class="sidebar">
-            <div class="logo-section">
-                <img src="AMS.jpg" alt="AMS Logo" class="logo" />
-                <h2 class="logo-text">AMS</h2>
-            </div>
-            <nav class="menu">
-                <a href="#" class="menu-item active" onclick="loadContent('dashboard-content.html')">
-                    <span class="material-icons">dashboard</span>
-                    <span>Dashboard</span>
-                </a>
-                <a href="#" class="menu-item" onclick="loadContent('students-content.html')">
-                    <span class="material-icons">school</span>
-                    <span>Students</span>
-                </a>
-                <a href="#" class="menu-item" onclick="loadContent('attendance-content.html')">
-                    <span class="material-icons">assignment</span>
-                    <span>Attendance</span>
-                </a>
-                <a href="#" class="menu-item" onclick="loadContent('settings-content.html')">
-                    <span class="material-icons">settings</span>
-                    <span>Settings</span>
-                </a>
-            </nav>
-            <div class="profile">
-                <img src="https://via.placeholder.com/40" alt="User" class="profile-pic" />
-                <div class="profile-info">
-                    <h3>User Name</h3>
-                    <p>user@example.com</p>
-                </div>
-            </div>
-        </aside>
-        <header class="header">
-            <div class="header-left">
-                <h1 class="header-title">Attendance Management Site</h1>
-            </div>
-            <div class="header-right">
-                <div class="theme-toggle">
-                    <button id="themeButton" class="theme-button">
-                        <span class="theme-icon" id="themeIcon">🌙</span>
-                    </button>
-                </div>
-                <div class="user-profile">
-                    <img src="https://via.placeholder.com/35" alt="User" class="user-avatar" />
-                </div>
-            </div>
-        </header>
-        <main class="main-content" id="mainContent">
-            <!-- Content will be loaded here dynamically -->
-        </main>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+          <img src="AMS.jpg" alt="AMS Logo" class="logo" />
+          <h2 class="logo-text">AMS</h2>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="menu">
+            <a href="#" class="menu-item active" onclick="navigate('dashboard-content.html', 'Dashboard')">
+                <span class="material-icons">dashboard</span>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="menu-item" onclick="navigate('students-content.html', 'Students')">
+                <span class="material-icons">school</span>
+                <span>Students</span>
+            </a>
+            <a href="#" class="menu-item" onclick="navigate('attendance-content.html', 'Attendance')">
+                <span class="material-icons">assignment</span>
+                <span>Attendance</span>
+            </a>
+            <a href="#" class="menu-item" onclick="navigate('settings-content.html', 'Settings')">
+                <span class="material-icons">settings</span>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <!-- Profile Section -->
+        <div class="profile">
+          <img
+            src="https://via.placeholder.com/40"
+            alt="User "
+            class="profile-pic"
+          />
+          <div class="profile-info">
+            <h3>User Name</h3>
+            <p>user@example.com</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <h1 class="header-title">Attendance Management Site</h1>
+        </div>
+        <div class="header-right">
+          <!-- Theme Toggle Button -->
+          <div class="theme-toggle">
+            <button id="themeButton" class="theme-button">
+              <span class="theme-icon" id="themeIcon">🌙</span>
+            </button>
+          </div>
+          <!-- User Profile -->
+          <div class="user-profile">
+            <img
+              src="https://via.placeholder.com/35"
+              alt="User "
+              class="user-avatar"
+            />
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="main-content" id="mainContent">
+        <!-- Content will be loaded here dynamically -->
+      </main>
     </div>
+
     <script src="nav.js"></script>
-</body>
+  </body>
 </html>
