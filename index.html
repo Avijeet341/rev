@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMS - Sign Up</title>
+    <link rel="stylesheet" href="signup-css.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <img src="AMS.jpg" alt="AMS Logo" class="navbar-logo" />
+        <h1 class="navbar-title">
+          <span class="logo-highlight">AMS</span>
+        </h1>
+      </div>
+      <div class="navbar-center">
+        <h1>Attendance Management Site</h1>
+      </div>
+      <div class="navbar-right">
+      </div>
+    </nav>
+
+    <!-- Background Video -->
+    <div class="video-bg">
+      <video id="video2" autoplay loop muted>
+        <source src="video2.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Sign Up Container -->
+    <div class="signup-container">
+      <div class="signup-form">
+        <h2>Sign Up</h2>
+        <form>
+          <!-- Name Fields -->
+          <div class="input-group">
+            <div class="input-wrapper">
+              <img src="person.png" alt="Person Icon" />
+              <input type="text" placeholder="First Name" required />
+            </div>
+            <div class="input-wrapper">
+              <img src="person.png" alt="Person Icon" />
+              <input type="text" placeholder="Middle Name" />
+            </div>
+            <div class="input-wrapper">
+              <img src="person.png" alt="Person Icon" />
+              <input type="text" placeholder="Last Name" required />
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div class="input-wrapper email-input">
+            <img src="email.png" alt="Email Icon" />
+            <input type="email" placeholder="Email" required />
+          </div>
+
+          <!-- Password Field -->
+          <div class="input-wrapper">
+            <img src="password.png" alt="Password Icon" />
+            <input type="password" placeholder="Password" required />
+          </div>
+
+          <!-- Confirm Password Field -->
+          <div class="input-wrapper">
+            <img src="password.png" alt="Password Icon" />
+            <input type="password" placeholder="Confirm Password" required />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Sign Up</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Welcome Section -->
+      <div class="signup-info">
+        <div class="welcome-text">
+          <h3>Welcome to Attendance Management Site</h3>
+          <p>Track your attendance efficiently and easily</p>
+        </div>
+        <img src="AMS.jpg" alt="AMS Logo" class="ams-logo" />
+      </div>
+    </div>
+  </body>
+</html>
